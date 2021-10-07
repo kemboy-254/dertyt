@@ -30,12 +30,11 @@ size_t print_list(const list_t *h)
 	const list_t *tmp = h;
 	int num = 0;
 
-	while (tmp->next == NULL)
+	while (tmp != NULL)
 	{
-		if (tmp->next == NULL)
+		if (tmp->str == NULL)
 		{
-			if (tmp->str == NULL)
-				printf("[0] (nil)\n");
+			printf("[0] (nil)\n");
 			printf("[%d] ", tmp->len);
 		}
 		else
@@ -48,7 +47,6 @@ size_t print_list(const list_t *h)
 		}
 		tmp = tmp->next;
 	}
-	printf("%d", num);
 	return (num);
 }
 int main(void)
